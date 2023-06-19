@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	<!-- Fav Heroes -->
+	<lua file="/ui/scripts/newui/fav_heroes.lua" />
+
+	<template name="lobby_player_fav_hero">
+		<panel width="51i" height="{height=100%}">
+			<!-- Hero Icon -->
+			<panel width="36i" height="36i" y="10i" align="center" valign="top" >
+				<image
+					name="lobby_player_{playerindex}_fav_hero_{heroindex}_icon"
+					texture="$invis"
+					width="-6i"
+					height="-6i"
+					align="center"
+					valign="center"
+					usealphamask="true"
+					alphamaskfile="/ui/fe2/elements/store2/mask.png"
+					noclick="1"
+				/>
+				<image texture="/ui/fe2/newui/res/homepage/border_iron.png" />
+			</panel>
+			<label
+				name="lobby_player_{playerindex}_fav_hero_{heroindex}_percentage"
+				y="30i"
+				shadow="true"
+				height="25i"
+				valign="top"
+				textalign="center"
+				textvalign="center"
+				font="dyn_10"
+				color="#ffffff"
+				noclick="0"
+			/>
+		</panel>
+	</template>
+
+	<!-- Wish I could use templates and instances for this... -->
+	<!-- But seems the forms can't be found if they're not placed on top level. -->
+	<trigger name="TestFavHeroes"/>
+
+	<!-- Lobby Player 0 -->
+	<trigger name="LobbyPlayer0FavHeroesStatus" />
+	<trigger name="LobbyPlayer0FavHeroesResult" />
+    <panel name="LobbyPlayer0FavHeroesSleeper" noclick="true" />
+	<form
+		name="LobbyPlayer0FavHeroes"
+		host="!masterserver"
+		method="post"
+		target="/client_requester.php"
+		statustrigger="LobbyPlayer0FavHeroesStatus"
+		resulttrigger="LobbyPlayer0FavHeroesResult"
+		resultparam0="error"
+		resultparam1="favHero1"
+		resultparam2="favHero2"
+		resultparam3="favHero3"
+		resultparam4="favHero4"
+		resultparam5="favHero5"
+		resultparam6="favHero1Time"
+		resultparam7="favHero2Time"
+		resultparam8="favHero3Time"
+		resultparam9="favHero4Time"
+		resultparam10="favHero5Time"
+		resultparam11="favHero1_2"
+		resultparam12="favHero2_2"
+		resultparam13="favHero3_2"
+		resultparam14="favHero4_2"
+		resultparam15="favHero5_2"
+	/>
+	<!-- Lobby Player 1 -->
+	<trigger name="LobbyPlayer1FavHeroesStatus"/>
+	<trigger name="LobbyPlayer1FavHeroesResult"/>
+    <panel name="LobbyPlayer1FavHeroesSleeper" noclick="true" />
+	<form
+		name="LobbyPlayer1FavHeroes"
+		host="!masterserver"
+		method="post"
+		target="/client_requester.php"
+		statustrigger="LobbyPlayer1FavHeroesStatus"
+		resulttrigger="LobbyPlayer1FavHeroesResult"
+		resultparam0="error"
+		resultparam1="favHero1"
+		resultparam2="favHero2"
+		resultparam3="favHero3"
+		resultparam4="favHero4"
+		resultparam5="favHero5"
+		resultparam6="favHero1Time"
+		resultparam7="favHero2Time"
+		resultparam8="favHero3Time"
+		resultparam9="favHero4Time"
+		resultparam10="favHero5Time"
+		resultparam11="favHero1_2"
+		resultparam12="favHero2_2"
+		resultparam13="favHero3_2"
+		resultparam14="favHero4_2"
+		resultparam15="favHero5_2"
+	/>
+	<!-- Lobby Player 2 -->
+	<trigger name="LobbyPlayer2FavHeroesStatus"/>
+	<trigger name="LobbyPlayer2FavHeroesResult"/>
+    <panel name="LobbyPlayer2FavHeroesSleeper" noclick="true" />
+	<form
+		name="LobbyPlayer2FavHeroes"
+		host="!masterserver"
+		method="post"
+		target="/client_requester.php"
+		statustrigger="LobbyPlayer2FavHeroesStatus"
+		resulttrigger="LobbyPlayer2FavHeroesResult"
+		resultparam0="error"
+		resultparam1="favHero1"
+		resultparam2="favHero2"
+		resultparam3="favHero3"
+		resultparam4="favHero4"
+		resultparam5="favHero5"
+		resultparam6="favHero1Time"
+		resultparam7="favHero2Time"
+		resultparam8="favHero3Time"
+		resultparam9="favHero4Time"
+		resultparam10="favHero5Time"
+		resultparam11="favHero1_2"
+		resultparam12="favHero2_2"
+		resultparam13="favHero3_2"
+		resultparam14="favHero4_2"
+		resultparam15="favHero5_2"
+	/>
+	<!-- Lobby Player 3 -->
+	<trigger name="LobbyPlayer3FavHeroesStatus"/>
+	<trigger name="LobbyPlayer3FavHeroesResult"/>
+    <panel name="LobbyPlayer3FavHeroesSleeper" noclick="true" />
+	<form
+		name="LobbyPlayer3FavHeroes"
+		host="!masterserver"
+		method="post"
+		target="/client_requester.php"
+		statustrigger="LobbyPlayer3FavHeroesStatus"
+		resulttrigger="LobbyPlayer3FavHeroesResult"
+		resultparam0="error"
+		resultparam1="favHero1"
+		resultparam2="favHero2"
+		resultparam3="favHero3"
+		resultparam4="favHero4"
+		resultparam5="favHero5"
+		resultparam6="favHero1Time"
+		resultparam7="favHero2Time"
+		resultparam8="favHero3Time"
+		resultparam9="favHero4Time"
+		resultparam10="favHero5Time"
+		resultparam11="favHero1_2"
+		resultparam12="favHero2_2"
+		resultparam13="favHero3_2"
+		resultparam14="favHero4_2"
+		resultparam15="favHero5_2"
+	/>
+	<!-- Lobby Player 4 -->
+	<trigger name="LobbyPlayer4FavHeroesStatus"/>
+	<trigger name="LobbyPlayer4FavHeroesResult"/>
+    <panel name="LobbyPlayer4FavHeroesSleeper" noclick="true" />
+	<form
+		name="LobbyPlayer4FavHeroes"
+		host="!masterserver"
+		method="post"
+		target="/client_requester.php"
+		statustrigger="LobbyPlayer4FavHeroesStatus"
+		resulttrigger="LobbyPlayer4FavHeroesResult"
+		resultparam0="error"
+		resultparam1="favHero1"
+		resultparam2="favHero2"
+		resultparam3="favHero3"
+		resultparam4="favHero4"
+		resultparam5="favHero5"
+		resultparam6="favHero1Time"
+		resultparam7="favHero2Time"
+		resultparam8="favHero3Time"
+		resultparam9="favHero4Time"
+		resultparam10="favHero5Time"
+		resultparam11="favHero1_2"
+		resultparam12="favHero2_2"
+		resultparam13="favHero3_2"
+		resultparam14="favHero4_2"
+		resultparam15="favHero5_2"
+	/>
+	<!-- Lobby Player 5 -->
+	<trigger name="LobbyPlayer5FavHeroesStatus"/>
+	<trigger name="LobbyPlayer5FavHeroesResult"/>
+    <panel name="LobbyPlayer5FavHeroesSleeper" noclick="true" />
+	<form
+		name="LobbyPlayer5FavHeroes"
+		host="!masterserver"
+		method="post"
+		target="/client_requester.php"
+		statustrigger="LobbyPlayer5FavHeroesStatus"
+		resulttrigger="LobbyPlayer5FavHeroesResult"
+		resultparam0="error"
+		resultparam1="favHero1"
+		resultparam2="favHero2"
+		resultparam3="favHero3"
+		resultparam4="favHero4"
+		resultparam5="favHero5"
+		resultparam6="favHero1Time"
+		resultparam7="favHero2Time"
+		resultparam8="favHero3Time"
+		resultparam9="favHero4Time"
+		resultparam10="favHero5Time"
+		resultparam11="favHero1_2"
+		resultparam12="favHero2_2"
+		resultparam13="favHero3_2"
+		resultparam14="favHero4_2"
+		resultparam15="favHero5_2"
+	/>
+	<!-- Lobby Player 6 -->
+	<trigger name="LobbyPlayer6FavHeroesStatus"/>
+	<trigger name="LobbyPlayer6FavHeroesResult"/>
+    <panel name="LobbyPlayer6FavHeroesSleeper" noclick="true" />
+	<form
+		name="LobbyPlayer6FavHeroes"
+		host="!masterserver"
+		method="post"
+		target="/client_requester.php"
+		statustrigger="LobbyPlayer6FavHeroesStatus"
+		resulttrigger="LobbyPlayer6FavHeroesResult"
+		resultparam0="error"
+		resultparam1="favHero1"
+		resultparam2="favHero2"
+		resultparam3="favHero3"
+		resultparam4="favHero4"
+		resultparam5="favHero5"
+		resultparam6="favHero1Time"
+		resultparam7="favHero2Time"
+		resultparam8="favHero3Time"
+		resultparam9="favHero4Time"
+		resultparam10="favHero5Time"
+		resultparam11="favHero1_2"
+		resultparam12="favHero2_2"
+		resultparam13="favHero3_2"
+		resultparam14="favHero4_2"
+		resultparam15="favHero5_2"
+	/>
+	<!-- Lobby Player 7 -->
+	<trigger name="LobbyPlayer7FavHeroesStatus"/>
+	<trigger name="LobbyPlayer7FavHeroesResult"/>
+    <panel name="LobbyPlayer7FavHeroesSleeper" noclick="true" />
+	<form
+		name="LobbyPlayer7FavHeroes"
+		host="!masterserver"
+		method="post"
+		target="/client_requester.php"
+		statustrigger="LobbyPlayer7FavHeroesStatus"
+		resulttrigger="LobbyPlayer7FavHeroesResult"
+		resultparam0="error"
+		resultparam1="favHero1"
+		resultparam2="favHero2"
+		resultparam3="favHero3"
+		resultparam4="favHero4"
+		resultparam5="favHero5"
+		resultparam6="favHero1Time"
+		resultparam7="favHero2Time"
+		resultparam8="favHero3Time"
+		resultparam9="favHero4Time"
+		resultparam10="favHero5Time"
+		resultparam11="favHero1_2"
+		resultparam12="favHero2_2"
+		resultparam13="favHero3_2"
+		resultparam14="favHero4_2"
+		resultparam15="favHero5_2"
+	/>
+	<!-- Lobby Player 8 -->
+	<trigger name="LobbyPlayer8FavHeroesStatus"/>
+	<trigger name="LobbyPlayer8FavHeroesResult"/>
+    <panel name="LobbyPlayer8FavHeroesSleeper" noclick="true" />
+	<form
+		name="LobbyPlayer8FavHeroes"
+		host="!masterserver"
+		method="post"
+		target="/client_requester.php"
+		statustrigger="LobbyPlayer8FavHeroesStatus"
+		resulttrigger="LobbyPlayer8FavHeroesResult"
+		resultparam0="error"
+		resultparam1="favHero1"
+		resultparam2="favHero2"
+		resultparam3="favHero3"
+		resultparam4="favHero4"
+		resultparam5="favHero5"
+		resultparam6="favHero1Time"
+		resultparam7="favHero2Time"
+		resultparam8="favHero3Time"
+		resultparam9="favHero4Time"
+		resultparam10="favHero5Time"
+		resultparam11="favHero1_2"
+		resultparam12="favHero2_2"
+		resultparam13="favHero3_2"
+		resultparam14="favHero4_2"
+		resultparam15="favHero5_2"
+	/>
+	<!-- Lobby Player 9 -->
+	<trigger name="LobbyPlayer9FavHeroesStatus"/>
+	<trigger name="LobbyPlayer9FavHeroesResult"/>
+    <panel name="LobbyPlayer9FavHeroesSleeper" noclick="true" />
+	<form
+		name="LobbyPlayer9FavHeroes"
+		host="!masterserver"
+	    method="post"
+		target="/client_requester.php"
+		statustrigger="LobbyPlayer9FavHeroesStatus"
+		resulttrigger="LobbyPlayer9FavHeroesResult"
+		resultparam0="error"
+		resultparam1="favHero1"
+		resultparam2="favHero2"
+		resultparam3="favHero3"
+		resultparam4="favHero4"
+		resultparam5="favHero5"
+		resultparam6="favHero1Time"
+		resultparam7="favHero2Time"
+		resultparam8="favHero3Time"
+		resultparam9="favHero4Time"
+		resultparam10="favHero5Time"
+		resultparam11="favHero1_2"
+		resultparam12="favHero2_2"
+		resultparam13="favHero3_2"
+		resultparam14="favHero4_2"
+		resultparam15="favHero5_2"
+	/>
+</package>

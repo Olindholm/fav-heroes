@@ -1,0 +1,16 @@
+#!/bin/bash
+set -euxo pipefail
+
+# Make sure we're in workdir
+cd $(dirname "$BASH_SOURCE")
+
+# Build
+NAME=fav-heroes
+OUTPUT_FILE=$(pwd)/$NAME.honmod
+
+# Remove previous file
+rm -f $OUTPUT_FILE
+
+# Zip new file
+# https://superuser.com/a/898496
+cd src &&  zip -9yr $OUTPUT_FILE .

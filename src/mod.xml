@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification
+    application="Heroes of Newerth"
+    appversion="*"
+    mmversion="1.0"
+    name="Fav Heroes"
+    version="1.0.0"
+    description="Shows favorite heroes during picking phase."
+    author="Olindholm"
+
+    weblink="https://github.com/Olindholm/fav-heroes"
+    updatecheckurl="https://github.com/Olindholm/fav-heroes/releases/latest/download/version"
+    updatedownloadurl="https://github.com/Olindholm/fav-heroes/releases/latest/download/fav-heroes.honmod"
+>
+    <copyfile name="ui/base.lua" />
+    <copyfile name="ui/fe2/newui/fav_heroes.package" />
+    <copyfile name="ui/scripts/newui/fav_heroes.lua" />
+
+    <editfile name="ui/fe2/newui/lobby_v2.package">
+        <!-- Add fav heroes import -->
+        <find><![CDATA[<package>]]></find>
+        <replace><![CDATA[<package>
+  <include file="/ui/fe2/newui/fav_heroes.package"/>
+]]></replace>
+
+        <!-- Add fav heroes instances -->
+        <find><![CDATA[<panel width="+10i" height="32i" align="center" valign="top" noclick="1">
+				<image texture="/ui/fe2/newui/res/lobby/muted.png" width="32i" height="32i" valign="center" align="{align2=right}" noclick="1" visible="0"
+						watch="LobbyVoice{index}" ontriggerlua="self:SetVisible(tonumber(param) == -1)"
+				/>
+			</panel>]]></find>
+        <replace><![CDATA[<panel width="+10i" height="32i" align="center" valign="top" noclick="1">
+				<image texture="/ui/fe2/newui/res/lobby/muted.png" width="32i" height="32i" valign="center" align="{align2=right}" noclick="1" visible="0"
+						watch="LobbyVoice{index}" ontriggerlua="self:SetVisible(tonumber(param) == -1)"
+				/>
+			</panel>
+
+			<!-- Fav Heroes -->
+			<panel align="center" y="80%" width="100%" height="28i" noclick="1">
+				<panel float="right" width="100%" height="100%" noclick="1">
+					<instance name="lobby_player_fav_hero" playerindex="{index}" heroindex="0" />
+					<instance name="lobby_player_fav_hero" playerindex="{index}" heroindex="1" />
+					<instance name="lobby_player_fav_hero" playerindex="{index}" heroindex="2" />
+					<instance name="lobby_player_fav_hero" playerindex="{index}" heroindex="3" />
+					<instance name="lobby_player_fav_hero" playerindex="{index}" heroindex="4" />
+				</panel>
+				<panel name="lobby_player_{index}_fav_hero_loading" visible="false">
+					<animatedimage
+						texture="/ui/fe2/elements/store2/loading/loading_.png"
+						y="80%"
+						width="256i"
+						height="64i"
+						align="center"
+						valign="center"
+						fps="25"
+						loop="true"
+						loopbackframe="0"
+						startframe="0"
+						onshow="StartAnim()"
+					/>
+				</panel>
+			</panel>]]></replace>
+    </editfile>
+</modification>
