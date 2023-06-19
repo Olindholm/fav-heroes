@@ -4,7 +4,7 @@
     appversion="*"
     mmversion="1.0"
     name="Fav Heroes"
-    version="1.0.0"
+    version="1.0.1"
     description="Shows favorite heroes during picking phase."
     author="Olindholm"
 
