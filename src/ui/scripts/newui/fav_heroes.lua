@@ -62,7 +62,7 @@ end
 
 local function VoteBanHero(hero)
     interface:UICmd("VoteBanHero('" .. hero.entity .. "');")
-    interface:UICmd("TeamChat('" .. Translate("team_message_vote_ban_hero", "hero", GetEntityDisplayName(hero.entity)) .. "')")
+    --interface:UICmd("TeamChat('" .. Translate("team_message_vote_ban_hero", "hero", GetEntityDisplayName(hero.entity)) .. "')")
 end
 
 local function GetLobbyPlayerFavHeroIconWidget(playerIndex, heroIndex)

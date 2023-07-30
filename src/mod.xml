@@ -20,7 +20,7 @@
         <!-- Add fav heroes import -->
         <find><![CDATA[<package>]]></find>
         <replace><![CDATA[<package>
-  <include file="/ui/fe2/newui/fav_heroes.package"/>
+	<include file="/ui/fe2/newui/fav_heroes.package"/>
 ]]></replace>
 
         <!-- Add fav heroes instances -->
@@ -61,5 +61,14 @@
 					/>
 				</panel>
 			</panel>]]></replace>
+    </editfile>
+
+    <!-- TODO this doesn't work because 'KONGOR' has their own stringtables... this is very annoying! -->
+    <editfile name="/stringtables/interface_en.str">
+        <!-- Add fav heroes import -->
+        <find><![CDATA[// End - do not delete this line]]></find>
+        <replace><![CDATA[team_message_vote_ban_hero						I have voted to ban ^r{hero}^*.
+
+// End - do not delete this line]]></replace>
     </editfile>
 </modification>
