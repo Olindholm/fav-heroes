@@ -13,4 +13,4 @@ rm -f $OUTPUT_FILE
 
 # Zip new file
 # https://superuser.com/a/898496
-cd src &&  zip -9yr $OUTPUT_FILE .
+cd src && zip -9yr $OUTPUT_FILE .

@@ -4,7 +4,7 @@
     appversion="*"
     mmversion="1.0"
     name="Fav Heroes"
-    version="1.0.1"
+    version="1.0.2"
     description="Shows favorite heroes during picking phase."
     author="Olindholm"
 
@@ -12,11 +12,11 @@
     updatecheckurl="https://github.com/Olindholm/fav-heroes/releases/latest/download/version"
     updatedownloadurl="https://github.com/Olindholm/fav-heroes/releases/latest/download/fav-heroes.honmod"
 >
-    <copyfile name="ui/base.lua" />
-    <copyfile name="ui/fe2/newui/fav_heroes.package" />
-    <copyfile name="ui/scripts/newui/fav_heroes.lua" />
+    <copyfile name="/ui/base.lua" />
+    <copyfile name="/ui/fe2/newui/fav_heroes.package" />
+    <copyfile name="/ui/scripts/newui/fav_heroes.lua" />
 
-    <editfile name="ui/fe2/newui/lobby_v2.package">
+    <editfile name="/ui/fe2/newui/lobby_v2.package">
         <!-- Add fav heroes import -->
         <find><![CDATA[<package>]]></find>
         <replace><![CDATA[<package>
@@ -44,7 +44,7 @@
 					<instance name="lobby_player_fav_hero" playerindex="{index}" heroindex="3" />
 					<instance name="lobby_player_fav_hero" playerindex="{index}" heroindex="4" />
 				</panel>
-				<panel name="lobby_player_{index}_fav_hero_loading" visible="false">
+				<panel name="lobby_player_{index}_fav_hero_loading" visible="false" noclick="1">
 					<animatedimage
 						texture="/ui/fe2/elements/store2/loading/loading_.png"
 						y="80%"
@@ -57,6 +57,7 @@
 						loopbackframe="0"
 						startframe="0"
 						onshow="StartAnim()"
+						noclick="1"
 					/>
 				</panel>
 			</panel>]]></replace>
