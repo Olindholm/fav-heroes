@@ -19,7 +19,45 @@ local function GetHeroIconPath(heroName)
         return '/ui/common/ability_coverup.tga'
     end
 
-    return '/heroes/' .. heroName .. '/icon.tga'
+    local heroDirectories = {
+        forsakenarcher = 'forsaken_archer',
+        corrupteddisciple = 'corrupted_disciple',
+        sandwraith = 'sand_wraith',
+        witchslayer = 'witch_slayer',
+        dwarfmagi = 'dwarf_magi',
+        flintbeastwood = 'flint_beastwood',
+        doctorrepulsor = 'doctor_repulsor',
+        bombardier = 'bomb',
+        emeraldwarden = 'emerald_warden',
+        monkeyking = 'monkey_king',
+        masterofarms = 'master_of_arms',
+        sirbenzington = 'sir_benzington',
+        kingklout = 'king_klout',
+    }
+    local heroIcons = {
+        pollywogpriest = 'icons/hero.tga',
+        electrician = 'icons/hero.tga',
+        yogi = 'icons/hero.tga',
+        cthulhuphant = 'alt/icon.tga',
+        artillery = 'alt/icon.tga',
+        geomancer = 'hd_geomancer/icon.tga',
+        sand_wraith = 'hd_sandwraith2/icon.tga',
+        tremble = 'hd_tremble/icon.tga',
+        tarot = 'hd_tarot/icon.tga',
+        bushwack = 'bushwack_hd/icon.tga',
+    }
+
+    heroDirectory = heroName
+    if heroDirectories[heroName] ~= nil then
+        heroDirectory = heroDirectories[heroName]
+    end
+
+    heroIcon = 'icon.tga'
+    if heroIcons[heroName] ~= nil then
+        heroIcon = heroIcons[heroName]
+    end
+
+    return '/heroes/' .. heroDirectory .. '/' .. heroIcon
 end
 
 local function VoteBanHero(hero)
